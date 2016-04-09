@@ -1,7 +1,7 @@
 ## finalduty/saltstack
-FROM finalduty/archlinux
+FROM finalduty/docker-archlinux-base
 MAINTAINER FinalDuty <root@finalduty.me>
 
 RUN pacman -Syu --noconfirm salt-zmq
 
-#CMD
+ENTRYPOINT /usr/bin/salt-master && /bin/bash -i
