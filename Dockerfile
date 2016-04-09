@@ -4,4 +4,5 @@ MAINTAINER FinalDuty <root@finalduty.me>
 
 RUN pacman -Syu --noconfirm salt-zmq
 
-ENTRYPOINT /usr/bin/salt-master && /bin/bash -i
+EXPOSE 4505 4506
+ENTRYPOINT /usr/bin/salt-master -d; /bin/bash 
