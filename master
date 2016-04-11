@@ -1,0 +1,21 @@
+## Salt-Master Config file
+
+interface: 0.0.0.0
+publish_port: 4505
+ret_port: 4506
+
+user: root
+
+ping_on_rotate: True
+
+fileserver_backend:
+  - git
+gitfs_remotes:
+  - ssh://git@github.com:finalduty/salt-config.git
+gitfs_root: state
+
+#ext_pillar:
+#  - git:
+#    - master: git@github.com:finalduty/salt-config.git
+#      - root: pillar
+
