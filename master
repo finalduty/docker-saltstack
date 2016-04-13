@@ -22,3 +22,11 @@ gitfs_root: states
 #    - master: git@github.com:finalduty/salt-config.git
 #      - root: pillar
 
+schedule:
+  run_highstate:
+    function: state.orchestrate
+    minutes: 15
+    splay: 15
+    args:
+      - orch.highstate
+
