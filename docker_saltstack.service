@@ -7,7 +7,7 @@ After=docker.service
 Restart=always
 TimeoutStartSec=0
 
-ExecStartPre=-/usr/bin/docker run -idt --name saltstack -p 4505:4505/tcp -p 4506:4506/tcp -v /srv/docker/salt-master/pki:/etc/salt/pki:rw finalduty/saltstack
+ExecStartPre=-/usr/bin/docker run -idt --name saltstack -p 4505:4505/tcp -p 4506:4506/tcp -v /srv/docker/saltstack/pki:/etc/salt/pki:rw finalduty/saltstack
 ExecStart=/usr/bin/docker start -a saltstack
 
 ExecStop=/usr/bin/docker stop -t 2 saltstack
