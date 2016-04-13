@@ -8,9 +8,10 @@ worker_threads: 3
 
 ping_on_rotate: True
 
-gitfs_provider: pygit2
 fileserver_backend:
   - git
+
+gitfs_provider: pygit2
 gitfs_remotes:
   - https://github.com/finalduty/salt-config.git
 gitfs_root: states
