@@ -3,16 +3,17 @@
 interface: 0.0.0.0
 publish_port: 4505
 ret_port: 4506
-
 user: root
+worker_threads: 3
 
 ping_on_rotate: True
 
+gitfs_provider: pygit2
 fileserver_backend:
   - git
 gitfs_remotes:
-  - ssh://git@github.com:finalduty/salt-config.git
-gitfs_root: state
+  - https://github.com/finalduty/salt-config.git
+gitfs_root: states
 
 #ext_pillar:
 #  - git:

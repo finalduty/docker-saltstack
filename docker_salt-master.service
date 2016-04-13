@@ -1,0 +1,17 @@
+[Unit]
+Description=Docker Container - Salt Master
+Requires=docker.service
+After=docker.service
+
+[Service]
+Restart=always
+TimeoutStartSec=0
+
+ExecStartPre=-/usr/bin/docker run -idt --name saltstack -p 4505:4505/tcp -p 4506:4506/tcp -v /srv/docker/salt-master/pki:/etc/salt/pki:rw finalduty/saltstack
+ExecStart=/usr/bin/docker start -a saltstack
+
+ExecStop=/usr/bin/docker stop -t 2 saltstack
+ExecStopPost=-/usr/bin/docker rm -f saltstack
+
+[Install]
+WantedBy=multi-user.target
