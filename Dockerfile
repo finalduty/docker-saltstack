@@ -1,7 +1,7 @@
 FROM finalduty/centos
 MAINTAINER FinalDuty <root@finalduty.me>
 EXPOSE 4505 4506
-CMD /usr/bin/salt-master -d; cron -s /bin/bash 
+CMD /usr/bin/salt-master -d; crond -s /bin/bash 
 
 ADD master   /etc/salt/
 
