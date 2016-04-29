@@ -2,4 +2,4 @@ SHELL=/bin/bash
 PATH=/sbin:/bin:/usr/sbin:/usr/bin
 MAILTO=root
 
-15 * * * * root salt-run state.orch orch.highstate 
+*/15 * * * * root salt-run state.orch orch.highstate 
