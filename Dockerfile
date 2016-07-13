@@ -1,4 +1,4 @@
-FROM finalduty/docker-centos-base
+FROM finalduty/centos-base
 MAINTAINER FinalDuty <root@finalduty.me>
 EXPOSE 4505 4506
 CMD /usr/bin/salt-master -d; /bin/bash 
