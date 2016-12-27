@@ -19,7 +19,6 @@ state_events: True
 fileserver_backend:
   - git
 
-gitfs_provider: pygit2
 gitfs_remotes:
   - https://github.com/finalduty/salt-config.git:
     - root: states
