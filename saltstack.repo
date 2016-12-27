@@ -1,5 +1,5 @@
 [saltstack-repo]
-name=SaltStack repo for Red Hat Enterprise Linux $releasever
+name=SaltStack repo for RHEL/CentOS $releasever
 baseurl=https://repo.saltstack.com/yum/redhat/$releasever/$basearch/latest
 enabled=1
 gpgcheck=1

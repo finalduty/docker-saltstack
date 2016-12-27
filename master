@@ -1,32 +1,27 @@
+andy.dustin@gmail.com [rev:9c0cf5e]
 ## Salt-Master Config file
 
 interface: 0.0.0.0
 publish_port: 4505
 ret_port: 4506
 user: root
-worker_threads: 3
-state_output: changes
+log_level: critical
+log_level_logfile: info
 
+top_file_merging_strategy: same
+hash_type: sha256
 ping_on_rotate: True
+cli_summary: True
+state_output: changes
+state_verbose: false
+state_events: True
 
 fileserver_backend:
   - git
 
 gitfs_provider: pygit2
 gitfs_remotes:
-  - https://github.com/finalduty/salt-config.git
-gitfs_root: states
-
-#ext_pillar:
-#  - git:
-#    - master: git@github.com:finalduty/salt-config.git
-#      - root: pillar
-
-schedule:
-  run_highstate:
-    function: state.orchestrate
-    minutes: 15
-    splay: 15
-    args:
-      - orch.highstate
-
+  - https://github.com/finalduty/salt-config.git:
+    - root: states
+  - https://github.com/finalduty/configs.git:
+    - mountpoint: configs
